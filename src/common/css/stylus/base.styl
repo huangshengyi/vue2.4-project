@@ -1,0 +1,28 @@
+// 设置默认样式
+html, body
+  font-size: 200
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, "Microsoft YaHei UI"
+
+// 清除浮动
+.clearfix
+  display: inline-block
+  &:after
+    display: block
+    content: '.'
+    height: 0
+    line-hegiht: 0
+    clear: both
+    visibility: hidden
+
+// 移动端根据dpr值(设备像素比)来解决1px边框的问题
+@media(-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+@media(-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+
